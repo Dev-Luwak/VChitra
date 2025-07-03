@@ -12,7 +12,7 @@ const GenerateButton = () => {
 
   const onClickHandler = ()=>{
     if(user){
-      navigate('\result')
+      navigate('/result')
     }
     else{
       setShowLogin(true)
