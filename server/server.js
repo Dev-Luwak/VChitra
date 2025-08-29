@@ -8,7 +8,10 @@ import imageRouter from './routes/imageRoutes.js'
 const PORT = process.env.PORT || 4000
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin: "https://vchitra-client.vercel.app", // Replace with your Vercel frontend URL
+    credentials: true, // Allow cookies and credentials if needed
+}))
 app.use(express.json())
 await connectDB()
 
