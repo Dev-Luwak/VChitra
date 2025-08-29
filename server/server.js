@@ -8,20 +8,9 @@ import imageRouter from './routes/imageRoutes.js'
 const PORT = process.env.PORT || 4000
 const app = express()
 
-const allowedOrigins = [
-    "https://v-chitra-image.vercel.app",
-    "https://v-chitra.vercel.app"
-];
-
 app.use(cors({
-    origin: (origin, callback) => {
-        if (allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
-    credentials: true,
+    origin: "https://v-chitra-image.vercel.app/", // Replace with your Vercel frontend URL
+    credentials: true, // Allow cookies and credentials if needed
 }))
 app.use(express.json())
 await connectDB()
