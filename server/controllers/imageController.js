@@ -5,7 +5,7 @@ import FormData from 'form-data'
 
 export const generatImage = async (req, res) =>{
     try{
-        const userId = req.userId;
+        const userId = req.userId; // Accessing Id from req.userId
         const {prompt} = req.body
 
         const user = await userModel.findById(userId)
