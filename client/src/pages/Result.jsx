@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { assets } from '../assets/assets'
 import { useContext } from 'react'
 import { AppContext } from '../context/AppContext'
-import { motion } from 'framer-motion'
+/* eslint-disable no-unused-vars */
+import { motion } from 'framer-motion';
+/* eslint-enable no-unused-vars */
 
 const Result = () => {
   const [image, setImage] = useState(assets.sample_img_1)
