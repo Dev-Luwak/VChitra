@@ -60,13 +60,17 @@ export const loginUser = async (req, res) => {
 }
 
 export const userCredits = async (req, res) => {
-    try{
-        const {userId} = req.body
+    try {
+        const userId = req.userId; // Access userId from req
 
-        const user = await userModel.findById(userId)
-        res.json({success: true, credits: user.creditBalance, user: {name: user.name}})
+        const user = await userModel.findById(userId);
+        if (!user) {
+            return res.json({ success: false, message: 'User not found' });
+        }
+
+        res.json({ success: true, credits: user.creditBalance, user: { name: user.name } });
     } catch (error) {
         console.log(error.message);
-        res.json({ success: false, message: error.message})
+        res.json({ success: false, message: error.message });
     }
-}
+};
