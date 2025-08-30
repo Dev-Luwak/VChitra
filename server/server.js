@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 4000
 const app = express()
 
 app.use(cors({
-    origin: "https://v-chitra-image.vercel.app/", // Replace with your Vercel frontend URL
-    credentials: true, // Allow cookies and credentials if needed
+    origin: true, 
+    credentials: true, 
 }))
 app.use(express.json())
 await connectDB()
